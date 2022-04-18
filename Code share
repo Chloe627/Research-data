@@ -1,0 +1,43 @@
+## Including Plots
+
+```{r}
+library(ggplot2)
+library(reshape2)
+library(dplyr)
+library(GGally)
+library(patchwork) # To display 2 charts together
+library(hrbrthemes)
+library(vegan)
+library(tidyverse)
+library(GGally)
+library(goeveg)
+library(viridis)
+library(Manu)
+```
+
+
+```{r}
+data_all = data.frame(ts(IS.df, start = c(2021,03),frequency = 365))
+
+```
+
+
+```{r  fig.align="center", echo = FALSE,fig.width = 12, fig.height=6}
+ggpairs(data_all)
+```
+
+```{r}
+
+data1 = data_all[c(1:13)]
+
+data1$Date = IS.df$Time
+data1
+
+
+data1_melt = melt(data1, id = c("Time","Date"))
+data1_melt
+
+
+ggplot(data1_melt, aes(x = Time, y = value,color = variable, group = variable))+geom_line()+labs(y="Temperture",x="Time")+ facet_wrap(~variable,ncol=2, scales='free_y')+theme_bw()
+
+```
