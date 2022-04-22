@@ -41,3 +41,28 @@ data1_melt
 ggplot(data1_melt, aes(x = Time, y = value,color = variable, group = variable))+geom_line()+labs(y="Temperture",x="Time")+ facet_wrap(~variable,ncol=2, scales='free_y')+theme_bw()
 
 ```
+
+
+New:
+```{r}
+
+data1 = data_all[c(1:13)]
+
+data1$Date = HNE.df$Time
+data1
+
+
+data1_melt = melt(data1, id = c("Time","Date"))
+data1_melt
+
+
+ggplot(data1_melt, aes(x = Time, y = value,color = variable, group = variable))+geom_line()+labs(y="Value",x="Time")+ facet_wrap(~variable,ncol=2, scales='free_y')+theme_bw()+geom_smooth(method="lm", se=FALSE,colour = "black")
+```
+
+```{r}
+data_all1 = ts(HNE.df, start = c(2021,03),frequency = 365)
+linear.fit = tslm(New_HNE_cases~New_HNE_temperature_9am+New_HNE_temperature_3pm+New_HNE_humidity_9am+New_HNE_humidity_3pm+New_HNE_NO+New_HNE_SO2+New_HNE_NO2+New_HNE_OZONE+New_HNE_PM10+New_HNE_PM2.5+New_HNE_CO+trend,data = data_all1)
+checkresiduals(linear.fit)
+summary(linear.fit)
+CV(linear.fit)
+```
