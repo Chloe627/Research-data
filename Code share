@@ -43,7 +43,137 @@ ggplot(data1_melt, aes(x = Time, y = value,color = variable, group = variable))+
 ```
 
 
-New:
+HNE: 
+
+```{r}
+HNE.df = read.csv("Newcastle_HNE.csv", header = TRUE)
+```
+
+```{r}
+HNE.df$New_HNE_temperature_9am[HNE.df$New_HNE_temperature_9am ==""] <- NA 
+HNE.df$New_HNE_temperature_9am = as.numeric(HNE.df$New_HNE_temperature_9am)
+mean(HNE.df$New_HNE_temperature_9am, na.rm = TRUE)
+HNE.df$New_HNE_temperature_9am[is.na(HNE.df$New_HNE_temperature_9am)]<-mean(HNE.df$New_HNE_temperature_9am, na.rm = TRUE)
+HNE.df$New_HNE_temperature_9am
+```
+
+
+```{r}
+HNE.df$New_HNE_temperature_3pm[HNE.df$New_HNE_temperature_3pm ==""] <- NA 
+HNE.df$New_HNE_temperature_3pm = as.numeric(HNE.df$New_HNE_temperature_3pm)
+mean(HNE.df$New_HNE_temperature_3pm, na.rm = TRUE)
+HNE.df$New_HNE_temperature_3pm[is.na(HNE.df$New_HNE_temperature_3pm)]<-mean(HNE.df$New_HNE_temperature_3pm, na.rm = TRUE)
+HNE.df$New_HNE_temperature_3pm
+```
+
+
+```{r}
+HNE.df$New_HNE_humidity_9am[HNE.df$New_HNE_humidity_9am ==""] <- NA 
+HNE.df$New_HNE_humidity_9am = as.numeric(HNE.df$New_HNE_humidity_9am)
+mean(HNE.df$New_HNE_humidity_9am, na.rm = TRUE)
+HNE.df$New_HNE_humidity_9am[is.na(HNE.df$New_HNE_humidity_9am)]<-mean(HNE.df$New_HNE_humidity_9am, na.rm = TRUE)
+HNE.df$New_HNE_humidity_9am
+```
+
+```{r}
+HNE.df$New_HNE_humidity_3pm[HNE.df$New_HNE_humidity_3pm ==""] <- NA 
+HNE.df$New_HNE_humidity_3pm = as.numeric(HNE.df$New_HNE_humidity_3pm)
+mean(HNE.df$New_HNE_humidity_3pm, na.rm = TRUE)
+HNE.df$New_HNE_humidity_3pm[is.na(HNE.df$New_HNE_humidity_3pm)]<-mean(HNE.df$New_HNE_humidity_3pm, na.rm = TRUE)
+HNE.df$New_HNE_humidity_3pm
+```
+
+```{r}
+HNE.df$New_HNE_SO2[HNE.df$New_HNE_SO2 ==""] <- NA 
+HNE.df$New_HNE_SO2 = as.numeric(HNE.df$New_HNE_SO2)
+mean(HNE.df$New_HNE_SO2, na.rm = TRUE)
+HNE.df$New_HNE_SO2[is.na(HNE.df$New_HNE_SO2)]<-mean(HNE.df$New_HNE_SO2, na.rm = TRUE)
+HNE.df$New_HNE_SO2
+```
+
+```{r}
+HNE.df$New_HNE_NO[HNE.df$New_HNE_NO ==""] <- NA 
+HNE.df$New_HNE_NO = as.numeric(HNE.df$New_HNE_NO)
+mean(HNE.df$New_HNE_NO, na.rm = TRUE)
+HNE.df$New_HNE_NO[is.na(HNE.df$New_HNE_NO)]<-mean(HNE.df$New_HNE_NO, na.rm = TRUE)
+HNE.df$New_HNE_NO
+```
+
+```{r}
+HNE.df$New_HNE_NO2[HNE.df$New_HNE_NO2 ==""] <- NA 
+HNE.df$New_HNE_NO2 = as.numeric(HNE.df$New_HNE_NO2)
+mean(HNE.df$New_HNE_NO2, na.rm = TRUE)
+HNE.df$New_HNE_NO2[is.na(HNE.df$New_HNE_NO2)]<-mean(HNE.df$New_HNE_NO2, na.rm = TRUE)
+HNE.df$New_HNE_NO2
+```
+
+```{r}
+HNE.df$New_HNE_OZONE[HNE.df$New_HNE_OZONE ==""] <- NA 
+HNE.df$New_HNE_OZONE = as.numeric(HNE.df$New_HNE_OZONE)
+mean(HNE.df$New_HNE_OZONE, na.rm = TRUE)
+HNE.df$New_HNE_OZONE[is.na(HNE.df$New_HNE_OZONE)]<-mean(HNE.df$New_HNE_OZONE, na.rm = TRUE)
+HNE.df$New_HNE_OZONE
+```
+
+```{r}
+HNE.df$New_HNE_PM10[HNE.df$New_HNE_PM10 ==""] <- NA 
+HNE.df$New_HNE_PM10 = as.numeric(HNE.df$New_HNE_PM10)
+mean(HNE.df$New_HNE_PM10, na.rm = TRUE)
+HNE.df$New_HNE_PM10[is.na(HNE.df$New_HNE_PM10)]<-mean(HNE.df$New_HNE_PM10, na.rm = TRUE)
+HNE.df$New_HNE_PM10
+```
+
+```{r}
+HNE.df$New_HNE_PM2.5[HNE.df$New_HNE_PM2.5 ==""] <- NA 
+HNE.df$New_HNE_PM2.5 = as.numeric(HNE.df$New_HNE_PM2.5)
+mean(HNE.df$New_HNE_PM2.5, na.rm = TRUE)
+HNE.df$New_HNE_PM2.5[is.na(HNE.df$New_HNE_PM2.5)]<-mean(HNE.df$New_HNE_PM2.5, na.rm = TRUE)
+HNE.df$New_HNE_PM2.5
+```
+
+```{r}
+HNE.df$New_HNE_CO[HNE.df$New_HNE_CO ==""] <- NA 
+HNE.df$New_HNE_CO = as.numeric(HNE.df$New_HNE_CO)
+mean(HNE.df$New_HNE_CO, na.rm = TRUE)
+HNE.df$New_HNE_CO[is.na(HNE.df$New_HNE_CO)]<-mean(HNE.df$New_HNE_CO, na.rm = TRUE)
+HNE.df$New_HNE_CO
+```
+
+```{r}
+HNE.df$New_HNE_CO[HNE.df$New_HNE_CO ==""] <- NA 
+HNE.df$New_HNE_CO = as.numeric(HNE.df$New_HNE_CO)
+mean(HNE.df$New_HNE_CO, na.rm = TRUE)
+HNE.df$New_HNE_CO[is.na(HNE.df$New_HNE_CO)]<-mean(HNE.df$New_HNE_CO, na.rm = TRUE)
+HNE.df$New_HNE_CO
+```
+
+
+
+
+## Including Plots
+
+
+
+```{r}
+library(ggplot2)
+library(reshape2)
+library(dplyr)
+library(GGally)
+library(lubridate)
+library(forecast)
+```
+
+
+
+```{r}
+data_all = data.frame(ts(HNE.df, start = c(2021,03),frequency = 365))
+
+```
+
+
+```{r  fig.align="center", echo = FALSE,fig.width = 12, fig.height=6}
+ggpairs(data_all)
+```
 ```{r}
 
 data1 = data_all[c(1:13)]
@@ -65,4 +195,54 @@ linear.fit = tslm(New_HNE_cases~New_HNE_temperature_9am+New_HNE_temperature_3pm+
 checkresiduals(linear.fit)
 summary(linear.fit)
 CV(linear.fit)
+```
+
+
+
+```{r}
+## model selection using BIC for logistic regression
+library(MuMIn)
+options(na.action = "na.fail")
+all.fits1 = dredge(linear.fit, rank ="AIC")
+head(all.fits1)
+best.model1 = get.models(all.fits1,1)[[1]]
+summary(best.model1)
+```
+
+
+```{r}
+library(mgcv)
+library(nlme)
+gam.fit = gam(New_HNE_cases~s(Time)+New_HNE_temperature_9am+New_HNE_temperature_3pm+New_HNE_humidity_9am+New_HNE_humidity_3pm+New_HNE_NO+New_HNE_SO2+New_HNE_NO2+New_HNE_OZONE+New_HNE_PM10+New_HNE_PM2.5+New_HNE_CO,data = data_all1)
+
+plot(gam.fit)
+summary(gam.fit)
+
+```
+
+```{r}
+## model selection using BIC for logistic regression
+library(MuMIn)
+options(na.action = "na.fail")
+all.fits = dredge(gam.fit, rank ="AIC")
+head(all.fits)
+best.model = get.models(all.fits,1)[[1]]
+summary(best.model)
+
+```
+
+```{r fig.align="center", echo = FALSE,fig.width = 12, fig.height=6}
+library(patchwork) # To display 2 charts together
+library(hrbrthemes)
+library(vegan)
+library(tidyverse)
+library(GGally)
+library(goeveg)
+library(viridis)
+library(Manu)
+```
+
+```{r}
+library(skimr)
+skim(data_all1)
 ```
