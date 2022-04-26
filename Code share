@@ -1,6 +1,89 @@
 Data cleaning
 
 ```{r}
+syd$Temperature_9am[syd$Temperature_9am ==""] <- NA 
+syd$Temperature_9am = as.numeric(syd$Temperature_9am)
+mean(syd$Temperature_9am, na.rm = TRUE)
+syd$Temperature_9am[is.na(syd$Temperature_9am)]<-mean(syd$Temperature_9am, na.rm = TRUE)
+syd$Temperature_9am
+```
+
+
+```{r}
+syd$Temperature_3pm[syd$Temperature_3pm ==""] <- NA 
+syd$Temperature_3pm = as.numeric(syd$Temperature_3pm)
+mean(syd$Temperature_3pm, na.rm = TRUE)
+syd$Temperature_3pm[is.na(syd$Temperature_3pm)]<-mean(syd$Temperature_3pm, na.rm = TRUE)
+syd$Temperature_3pm
+```
+
+
+```{r}
+syd$Humidity_9am[syd$Humidity_9am ==""] <- NA 
+syd$Humidity_9am = as.numeric(syd$Humidity_9am)
+mean(syd$Humidity_9am, na.rm = TRUE)
+syd$Humidity_9am[is.na(syd$Humidity_9am)]<-mean(syd$Humidity_9am, na.rm = TRUE)
+syd$Humidity_9am
+```
+
+```{r}
+syd$Humidity_3pm[syd$Humidity_3pm ==""] <- NA 
+syd$Humidity_3pm = as.numeric(syd$Humidity_3pm)
+mean(syd$Humidity_3pm, na.rm = TRUE)
+syd$Humidity_3pm[is.na(syd$Humidity_3pm)]<-mean(syd$Humidity_3pm, na.rm = TRUE)
+syd$Humidity_3pm
+```
+
+```{r}
+syd$SO2[syd$SO2 ==""] <- NA 
+syd$SO2 = as.numeric(syd$SO2)
+mean(syd$SO2, na.rm = TRUE)
+syd$SO2[is.na(syd$SO2)]<-mean(syd$SO2, na.rm = TRUE)
+syd$SO2
+```
+
+```{r}
+syd$NO[syd$NO ==""] <- NA 
+syd$NO = as.numeric(syd$NO)
+mean(syd$NO, na.rm = TRUE)
+syd$NO[is.na(syd$NO)]<-mean(syd$NO, na.rm = TRUE)
+syd$NO
+```
+
+```{r}
+syd$NO2[syd$NO2 ==""] <- NA 
+syd$NO2 = as.numeric(syd$NO2)
+mean(syd$NO2, na.rm = TRUE)
+syd$NO2[is.na(syd$NO2)]<-mean(syd$NO2, na.rm = TRUE)
+syd$NO2
+```
+
+```{r}
+syd$OZONE[syd$OZONE ==""] <- NA 
+syd$OZONE = as.numeric(syd$OZONE)
+mean(syd$OZONE, na.rm = TRUE)
+syd$OZONE[is.na(syd$OZONE)]<-mean(syd$OZONE, na.rm = TRUE)
+syd$OZONE
+```
+
+```{r}
+syd$PM10[syd$PM10 ==""] <- NA 
+syd$PM10 = as.numeric(syd$PM10)
+mean(syd$PM10, na.rm = TRUE)
+syd$PM10[is.na(syd$PM10)]<-mean(syd$PM10, na.rm = TRUE)
+syd$PM10
+```
+
+```{r}
+syd$PM2.5[syd$PM2.5 ==""] <- NA 
+syd$PM2.5 = as.numeric(syd$PM2.5)
+mean(syd$PM2.5, na.rm = TRUE)
+syd$PM2.5[is.na(syd$PM2.5)]<-mean(syd$PM2.5, na.rm = TRUE)
+syd$PM2.5
+```
+
+
+```{r}
 HNE$Temperature_9am[HNE$Temperature_9am ==""] <- NA 
 HNE$Temperature_9am = as.numeric(HNE$Temperature_9am)
 mean(HNE$Temperature_9am, na.rm = TRUE)
