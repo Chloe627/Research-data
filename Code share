@@ -1,3 +1,13 @@
+# Statistical summary
+library(knitr)
+summary(syd)%>% 
+  kable() %>%
+  kable_styling("striped", full_width = F) %>% 
+  column_spec(3:5) %>%
+  row_spec(3:6)
+
+
+
 # coefficient plot code
 
 res2 <- rcorr(as.matrix(syd_ts[,-1]),type ="pearson")
