@@ -1,3 +1,26 @@
+# coefficient plot code
+
+res2 <- rcorr(as.matrix(syd_ts[,-1]),type ="pearson")
+r <- res2$r 
+p <- res2$P 
+p[is.na(p)] <- 1
+corrplot(r, p.mat = p, insig = "label_sig",type="lower", addCoef.col = "black",
+         order="original",method="color",outline="gray",cl.align = "c",
+         tl.col=NULL,tl.pos = 'ld',diag = T,tl.srt=60,tl.cex = 1,cl.cex = 1.2,
+         cl.pos = "r",tl.offset=0.1,cl.ratio =0.2,
+         sig.level = c(0.001,0.01,.05), pch.cex = 1, pch.col = "transparent")
+
+# GAM code
+
+library(mgcv)
+library(nlme)
+syd_gam = gam(Case_rate~s(Date,bs="cr")+Temperature_9am+Temperature_3pm+Humidity_9am+Humidity_3pm+NO+SO2+NO2+OZONE+PM10+PM2.5, family=nb(link="log"),data = syd_ts)
+
+plot(syd_gam)
+summary(syd_gam)
+
+
+
 ## Including Plots
 
 ```{r}
