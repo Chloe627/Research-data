@@ -1,0 +1,44 @@
+---
+title: "model"
+author: "Manxi Luo"
+date: "26/04/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(readxl)
+syd <- read_excel("alalal.xlsx")
+```
+
+
+```{r}
+syd <- na.omit(syd)
+syd_ts = ts(syd, start = c(2021,03),frequency = 365)
+
+syd_lm = lm(data = syd_ts, Case_rate~Date+ Temperature_9am +Temperature_3pm + Humidity_9am + Humidity_3pm+NO+SO2+NO2+OZONE+PM10+PM2.5)
+checkresiduals(syd_lm)
+summary(syd_lm)
+CV(syd_lm)
+```
+
+
+
+```{r}
+HNE <- read_excel("Newcastle_HNE.xlsx")
+head(HNE)
+
+HNE <- na.omit(HNE)
+HNE_ts = ts(HNE, start = c(2021,03),frequency = 365)
+```
+
+```{r}
+HNE_lm =lm(Case_rate~Temperature_9am+Temperature_3pm+Humidity_9am+Humidity_3pm+NO+SO2+NO2+OZONE+PM10+PM2.5+CO,data = HNE_ts)
+checkresiduals(HNE_lm)
+summary(HNE_lm)
+CV(HNE_lm)
+```
+
