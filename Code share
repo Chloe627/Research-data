@@ -1,3 +1,98 @@
+Data cleaning
+
+```{r}
+HNE$Temperature_9am[HNE$Temperature_9am ==""] <- NA 
+HNE$Temperature_9am = as.numeric(HNE$Temperature_9am)
+mean(HNE$Temperature_9am, na.rm = TRUE)
+HNE$Temperature_9am[is.na(HNE$Temperature_9am)]<-mean(HNE$Temperature_9am, na.rm = TRUE)
+HNE$Temperature_9am
+```
+
+
+```{r}
+HNE$Temperature_3pm[HNE$Temperature_3pm ==""] <- NA 
+HNE$Temperature_3pm = as.numeric(HNE$Temperature_3pm)
+mean(HNE$Temperature_3pm, na.rm = TRUE)
+HNE$Temperature_3pm[is.na(HNE$Temperature_3pm)]<-mean(HNE$Temperature_3pm, na.rm = TRUE)
+HNE$Temperature_3pm
+```
+
+
+```{r}
+HNE$Humidity_9am[HNE$Humidity_9am ==""] <- NA 
+HNE$Humidity_9am = as.numeric(HNE$Humidity_9am)
+mean(HNE$Humidity_9am, na.rm = TRUE)
+HNE$Humidity_9am[is.na(HNE$Humidity_9am)]<-mean(HNE$Humidity_9am, na.rm = TRUE)
+HNE$Humidity_9am
+```
+
+```{r}
+HNE$Humidity_3pm[HNE$Humidity_3pm ==""] <- NA 
+HNE$Humidity_3pm = as.numeric(HNE$Humidity_3pm)
+mean(HNE$Humidity_3pm, na.rm = TRUE)
+HNE$Humidity_3pm[is.na(HNE$Humidity_3pm)]<-mean(HNE$Humidity_3pm, na.rm = TRUE)
+HNE$Humidity_3pm
+```
+
+```{r}
+HNE$SO2[HNE$SO2 ==""] <- NA 
+HNE$SO2 = as.numeric(HNE$SO2)
+mean(HNE$SO2, na.rm = TRUE)
+HNE$SO2[is.na(HNE$SO2)]<-mean(HNE$SO2, na.rm = TRUE)
+HNE$SO2
+```
+
+```{r}
+HNE$NO[HNE$NO ==""] <- NA 
+HNE$NO = as.numeric(HNE$NO)
+mean(HNE$NO, na.rm = TRUE)
+HNE$NO[is.na(HNE$NO)]<-mean(HNE$NO, na.rm = TRUE)
+HNE$NO
+```
+
+```{r}
+HNE$NO2[HNE$NO2 ==""] <- NA 
+HNE$NO2 = as.numeric(HNE$NO2)
+mean(HNE$NO2, na.rm = TRUE)
+HNE$NO2[is.na(HNE$NO2)]<-mean(HNE$NO2, na.rm = TRUE)
+HNE$NO2
+```
+
+```{r}
+HNE$OZONE[HNE$OZONE ==""] <- NA 
+HNE$OZONE = as.numeric(HNE$OZONE)
+mean(HNE$OZONE, na.rm = TRUE)
+HNE$OZONE[is.na(HNE$OZONE)]<-mean(HNE$OZONE, na.rm = TRUE)
+HNE$OZONE
+```
+
+```{r}
+HNE$PM10[HNE$PM10 ==""] <- NA 
+HNE$PM10 = as.numeric(HNE$PM10)
+mean(HNE$PM10, na.rm = TRUE)
+HNE$PM10[is.na(HNE$PM10)]<-mean(HNE$PM10, na.rm = TRUE)
+HNE$PM10
+```
+
+```{r}
+HNE$PM2.5[HNE$PM2.5 ==""] <- NA 
+HNE$PM2.5 = as.numeric(HNE$PM2.5)
+mean(HNE$PM2.5, na.rm = TRUE)
+HNE$PM2.5[is.na(HNE$PM2.5)]<-mean(HNE$PM2.5, na.rm = TRUE)
+HNE$PM2.5
+```
+
+```{r}
+HNE$CO[HNE$CO ==""] <- NA 
+HNE$CO = as.numeric(HNE$CO)
+mean(HNE$CO, na.rm = TRUE)
+HNE$CO[is.na(HNE$CO)]<-mean(HNE$CO, na.rm = TRUE)
+HNE$CO
+```
+
+
+
+
 # Statistical summary
 library(knitr)
 summary(syd)%>% 
