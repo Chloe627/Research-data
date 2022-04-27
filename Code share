@@ -1,3 +1,13 @@
+# Statistical summary
+library(knitr)
+options(digits=2)
+summary(syd[2:12])%>% 
+  kable(caption = "Sydney LHD") %>%
+  kable_styling("striped", full_width = F) %>% 
+  kable_classic(full_width = F, html_font = "Cambria")
+
+
+
 Data cleaning
 
 ```{r}
